@@ -379,7 +379,7 @@ section {
 }
 
 .layer {
-  width: 100%;
+  width: 85%;
   height: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(155, 78, 228, 0.9));
   position: absolute;
@@ -404,7 +404,7 @@ section {
 
 .layer p {
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   line-height: 1.7;
 }
 
@@ -626,7 +626,8 @@ section {
   .contact {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding-left: 0;
+    padding-left: 4px;
+    padding-right: 6px;
     margin-top: 60px;
   }
 }
@@ -678,34 +679,53 @@ section {
     padding: 10px;
   }
 }
-
-/* Optional: Hide scrollbars on mobile for a cleaner look */
-@media (max-width: 600px) {
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  .menu-btn {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .menu-btn {
+    display: block; /* show hamburger icon only on mobile */
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    .menu-btn {
+  display: none; /* hidden by default on large screens */
+}
+
 .nav-links {
   display: flex;
-  transition: max-height 0.3s ease-in-out;
 }
 
 @media (max-width: 600px) {
+  .menu-btn {
+    display: block; /* show hamburger icon only on mobile */
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+  }
+
   .nav-links {
     flex-direction: column;
     max-height: 0;
     overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
     width: 100%;
   }
 
   .nav-links.active {
-    max-height: 500px; /* enough to show the full menu */
+    max-height: 500px; /* Show when toggled */
   }
 
   .nav-links ul {
     flex-direction: column;
     width: 100%;
     padding: 10px 0;
+    margin: 0;
+    align-items: center;
   }
 
   .nav-links ul li {
@@ -713,15 +733,36 @@ section {
     text-align: center;
     margin: 10px 0;
   }
-
-  .menu-btn {
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-  }
 }
 
+  }
 
+  .nav-links {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* Show when toggled */
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
 
 </style>
 
